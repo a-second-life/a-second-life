@@ -6,51 +6,164 @@
   <title>A_SECOND_LIFE</title>
 
   <style>
-    body {
-      margin: 0;
-      background: #0f0f0f;
-      color: white;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
+    * {
+      box-sizing: border-box;
     }
 
-    .container {
-      max-width: 600px;
-      padding: 20px;
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #030507;
+      color: white;
+      font-family: "Courier New", monospace;
+      overflow: hidden;
+    }
+
+    .background {
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(0, 100, 255, 0.45), transparent 35%),
+        radial-gradient(circle at 80% 40%, rgba(0, 255, 150, 0.45), transparent 35%),
+        radial-gradient(circle at 50% 100%, rgba(140, 0, 255, 0.45), transparent 40%),
+        #030507;
+      animation: moveBackground 10s ease-in-out infinite alternate;
+    }
+
+    .wave {
+      position: fixed;
+      width: 160%;
+      height: 160%;
+      left: -30%;
+      top: 25%;
+      background: linear-gradient(
+        120deg,
+        transparent 35%,
+        rgba(0, 180, 255, 0.25),
+        rgba(0, 255, 160, 0.35),
+        rgba(180, 0, 255, 0.25),
+        transparent 65%
+      );
+      filter: blur(30px);
+      transform: rotate(-12deg);
+      animation: waveMove 8s linear infinite;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
     }
 
     h1 {
-      font-size: 3rem;
-      letter-spacing: 4px;
+      font-size: clamp(2.2rem, 7vw, 5rem);
+      letter-spacing: 0.18em;
+      margin: 0 0 20px;
+      font-weight: 400;
+      text-shadow: 0 0 25px rgba(255,255,255,0.4);
     }
 
-    p {
-      font-size: 1.2rem;
+    .subtitle {
+      letter-spacing: 0.35em;
       opacity: 0.8;
+      margin-bottom: 70px;
+    }
+
+    .coming {
+      font-size: clamp(1.8rem, 5vw, 4rem);
+      letter-spacing: 0.25em;
+      margin-bottom: 35px;
+      background: linear-gradient(90deg, #7d6bff, #46e6ff, #5dffb0);
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: glow 3s ease-in-out infinite alternate;
+    }
+
+    .text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      opacity: 0.85;
+      margin-bottom: 35px;
     }
 
     a {
-      color: #7CFFB2;
+      color: #5dffdc;
       text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 24px;
+      width: 100%;
+      text-align: center;
+      z-index: 3;
+      font-size: 0.8rem;
+      opacity: 0.5;
+      letter-spacing: 0.25em;
+    }
+
+    @keyframes moveBackground {
+      from {
+        filter: hue-rotate(0deg);
+        transform: scale(1);
+      }
+      to {
+        filter: hue-rotate(45deg);
+        transform: scale(1.12);
+      }
+    }
+
+    @keyframes waveMove {
+      from {
+        transform: translateX(-10%) rotate(-12deg);
+      }
+      to {
+        transform: translateX(10%) rotate(-12deg);
+      }
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px rgba(70,230,255,0.4);
+      }
+      to {
+        text-shadow: 0 0 30px rgba(93,255,176,0.9);
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>A_SECOND_LIFE</h1>
+  <div class="background"></div>
+  <div class="wave"></div>
 
-    <p>Giving devices a second life.</p>
+  <main class="content">
+    <div>
+      <h1>A_SECOND_LIFE</h1>
 
-    <p>
+      <div class="subtitle">GIVING DEVICES A SECOND LIFE</div>
+
+      <div class="coming">COMING SOON</div>
+
+      <div class="text">
+        We transform old smartphones<br>
+        into useful smart devices.
+      </div>
+
       <a href="mailto:hello@a-second-life.com">
         hello@a-second-life.com
       </a>
-    </p>
-  </div>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 A_SECOND_LIFE
+  </footer>
 </body>
 </html>
