@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>A_SECOND_LIFE</title>
 
   <style>
@@ -13,20 +14,22 @@
     body {
       margin: 0;
       min-height: 100vh;
+      overflow: hidden;
       background: #030507;
       color: white;
       font-family: "Courier New", monospace;
-      overflow: hidden;
     }
 
     .background {
       position: fixed;
       inset: 0;
+
       background:
         radial-gradient(circle at 20% 80%, rgba(0, 100, 255, 0.45), transparent 35%),
         radial-gradient(circle at 80% 40%, rgba(0, 255, 150, 0.45), transparent 35%),
         radial-gradient(circle at 50% 100%, rgba(140, 0, 255, 0.45), transparent 40%),
         #030507;
+
       animation: moveBackground 10s ease-in-out infinite alternate;
     }
 
@@ -36,6 +39,7 @@
       height: 160%;
       left: -30%;
       top: 25%;
+
       background: linear-gradient(
         120deg,
         transparent 35%,
@@ -44,18 +48,23 @@
         rgba(180, 0, 255, 0.25),
         transparent 65%
       );
+
       filter: blur(30px);
       transform: rotate(-12deg);
+
       animation: waveMove 8s linear infinite;
     }
 
     .content {
       position: relative;
       z-index: 2;
+
       min-height: 100vh;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       text-align: center;
       padding: 24px;
     }
@@ -69,29 +78,40 @@
     .logo-box {
       width: 110px;
       height: 110px;
+
       border-radius: 28px;
+
       border: 1px solid rgba(255,255,255,0.12);
+
       background: rgba(255,255,255,0.04);
+
       backdrop-filter: blur(10px);
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       position: relative;
+
       box-shadow: 0 0 40px rgba(0,255,180,0.15);
     }
 
     .logo-box span {
       position: relative;
       z-index: 2;
+
       font-size: 1.8rem;
       letter-spacing: 0.2em;
+
       color: #5dffb0;
     }
 
     .square {
       position: absolute;
+
       width: 58px;
       height: 58px;
+
       border-radius: 16px;
       border: 2px solid;
     }
@@ -108,50 +128,80 @@
     }
 
     h1 {
-      font-size: clamp(2.2rem, 7vw, 5rem);
-      letter-spacing: 0.18em;
       margin: 0 0 20px;
+
+      font-size: clamp(2.2rem, 7vw, 5rem);
+
+      letter-spacing: 0.18em;
       font-weight: 400;
+
       text-shadow: 0 0 25px rgba(255,255,255,0.4);
     }
 
     .subtitle {
       letter-spacing: 0.35em;
       opacity: 0.8;
-      margin-bottom: 70px;
+      margin-bottom: 50px;
+      font-size: 0.95rem;
     }
 
     .coming {
       font-size: clamp(1.8rem, 5vw, 4rem);
+
       letter-spacing: 0.25em;
+
       margin-bottom: 35px;
-      background: linear-gradient(90deg, #7d6bff, #46e6ff, #5dffb0);
+
+      background: linear-gradient(
+        90deg,
+        #7d6bff,
+        #46e6ff,
+        #5dffb0
+      );
+
       -webkit-background-clip: text;
       color: transparent;
+
       animation: glow 3s ease-in-out infinite alternate;
     }
 
     .text {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      opacity: 0.85;
-      margin-bottom: 35px;
+      font-size: 1.05rem;
+      line-height: 1.9;
+
+      opacity: 0.82;
+
+      margin-bottom: 45px;
     }
 
     a {
       color: #5dffdc;
+
       text-decoration: none;
-      font-size: 1.1rem;
+
+      font-size: 1.05rem;
+
+      transition: 0.3s;
+    }
+
+    a:hover {
+      opacity: 0.7;
     }
 
     footer {
       position: fixed;
       bottom: 24px;
+
       width: 100%;
+
       text-align: center;
+
       z-index: 3;
+
       font-size: 0.8rem;
+
       opacity: 0.5;
+
       letter-spacing: 0.25em;
     }
 
@@ -160,6 +210,7 @@
         filter: hue-rotate(0deg);
         transform: scale(1);
       }
+
       to {
         filter: hue-rotate(45deg);
         transform: scale(1.12);
@@ -170,6 +221,7 @@
       from {
         transform: translateX(-10%) rotate(-12deg);
       }
+
       to {
         transform: translateX(10%) rotate(-12deg);
       }
@@ -179,53 +231,76 @@
       from {
         text-shadow: 0 0 10px rgba(70,230,255,0.4);
       }
+
       to {
         text-shadow: 0 0 30px rgba(93,255,176,0.9);
       }
     }
   </style>
 
-  <!-- Google tag (gtag.js) -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQQ9W6QL1X"></script>
+
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag(){
+      dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
 
     gtag('config', 'G-NQQ9W6QL1X');
   </script>
+
 </head>
 
 <body>
+
   <div class="background"></div>
   <div class="wave"></div>
 
   <main class="content">
+
     <div>
 
       <div class="logo">
         <div class="logo-box">
+
           <div class="square square1"></div>
           <div class="square square2"></div>
+
           <span>ASL</span>
+
         </div>
       </div>
 
       <h1>A_SECOND_LIFE</h1>
 
-      <div class="subtitle">GIVING DEVICES A SECOND LIFE</div>
+      <div class="subtitle">
+        REIMAGINING OLD TECHNOLOGY
+      </div>
 
-      <div class="coming">COMING SOON</div>
+      <div class="coming">
+        A NEW LIFE IS COMING
+      </div>
+
+      <div class="text">
+        Millions of devices are forgotten every year.<br>
+        We believe they still deserve a place in our lives.
+      </div>
 
       <a href="mailto:hello@a-second-life.com">
         hello@a-second-life.com
       </a>
 
     </div>
+
   </main>
 
   <footer>
     © 2026 A_SECOND_LIFE
   </footer>
+
 </body>
 </html>
