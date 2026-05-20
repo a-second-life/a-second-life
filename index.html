@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>A_SECOND_LIFE</title>
 
+  <meta name="description"
+        content="Reimagining old technology. Giving forgotten smartphones and devices a second life.">
+
   <style>
+
     * {
       box-sizing: border-box;
     }
@@ -15,8 +20,11 @@
       margin: 0;
       min-height: 100vh;
       overflow: hidden;
+
       background: #030507;
+
       color: white;
+
       font-family: "Courier New", monospace;
     }
 
@@ -35,8 +43,10 @@
 
     .wave {
       position: fixed;
+
       width: 160%;
       height: 160%;
+
       left: -30%;
       top: 25%;
 
@@ -50,6 +60,7 @@
       );
 
       filter: blur(30px);
+
       transform: rotate(-12deg);
 
       animation: waveMove 8s linear infinite;
@@ -66,13 +77,19 @@
       justify-content: center;
 
       text-align: center;
+
       padding: 24px;
     }
 
     .logo {
       display: flex;
       justify-content: center;
+
       margin-bottom: 35px;
+    }
+
+    .logo-link {
+      text-decoration: none;
     }
 
     .logo-box {
@@ -94,6 +111,14 @@
       position: relative;
 
       box-shadow: 0 0 40px rgba(0,255,180,0.15);
+
+      transition: 0.35s ease;
+    }
+
+    .logo-box:hover {
+      transform: scale(1.06);
+
+      box-shadow: 0 0 60px rgba(93,255,176,0.35);
     }
 
     .logo-box span {
@@ -101,6 +126,7 @@
       z-index: 2;
 
       font-size: 1.8rem;
+
       letter-spacing: 0.2em;
 
       color: #5dffb0;
@@ -113,17 +139,21 @@
       height: 58px;
 
       border-radius: 16px;
+
       border: 2px solid;
     }
 
     .square1 {
       border-color: #5dffb0;
+
       transform: rotate(12deg);
+
       opacity: 0.8;
     }
 
     .square2 {
       border-color: rgba(255,255,255,0.5);
+
       transform: rotate(-12deg);
     }
 
@@ -133,6 +163,7 @@
       font-size: clamp(2.2rem, 7vw, 5rem);
 
       letter-spacing: 0.18em;
+
       font-weight: 400;
 
       text-shadow: 0 0 25px rgba(255,255,255,0.4);
@@ -140,8 +171,11 @@
 
     .subtitle {
       letter-spacing: 0.35em;
+
       opacity: 0.8;
+
       margin-bottom: 50px;
+
       font-size: 0.95rem;
     }
 
@@ -160,6 +194,7 @@
       );
 
       -webkit-background-clip: text;
+
       color: transparent;
 
       animation: glow 3s ease-in-out infinite alternate;
@@ -167,6 +202,7 @@
 
     .text {
       font-size: 1.05rem;
+
       line-height: 1.9;
 
       opacity: 0.82;
@@ -174,7 +210,17 @@
       margin-bottom: 45px;
     }
 
-    a {
+    .text a {
+      color: #5dffdc;
+
+      text-decoration: none;
+    }
+
+    .text a:hover {
+      opacity: 0.7;
+    }
+
+    .mail {
       color: #5dffdc;
 
       text-decoration: none;
@@ -184,12 +230,13 @@
       transition: 0.3s;
     }
 
-    a:hover {
+    .mail:hover {
       opacity: 0.7;
     }
 
     footer {
       position: fixed;
+
       bottom: 24px;
 
       width: 100%;
@@ -206,18 +253,22 @@
     }
 
     @keyframes moveBackground {
+
       from {
         filter: hue-rotate(0deg);
+
         transform: scale(1);
       }
 
       to {
         filter: hue-rotate(45deg);
+
         transform: scale(1.12);
       }
     }
 
     @keyframes waveMove {
+
       from {
         transform: translateX(-10%) rotate(-12deg);
       }
@@ -228,6 +279,7 @@
     }
 
     @keyframes glow {
+
       from {
         text-shadow: 0 0 10px rgba(70,230,255,0.4);
       }
@@ -236,6 +288,7 @@
         text-shadow: 0 0 30px rgba(93,255,176,0.9);
       }
     }
+
   </style>
 
   <!-- Google Analytics -->
@@ -265,14 +318,20 @@
     <div>
 
       <div class="logo">
-        <div class="logo-box">
 
-          <div class="square square1"></div>
-          <div class="square square2"></div>
+        <a href="reuse.html" class="logo-link">
 
-          <span>ASL</span>
+          <div class="logo-box">
 
-        </div>
+            <div class="square square1"></div>
+            <div class="square square2"></div>
+
+            <span>ASL</span>
+
+          </div>
+
+        </a>
+
       </div>
 
       <h1>A_SECOND_LIFE</h1>
@@ -287,10 +346,14 @@
 
       <div class="text">
         Millions of devices are forgotten every year.<br>
-        We believe they still deserve a place in our lives.
+        We believe they still deserve a place in our lives.<br><br>
+
+        <a href="reuse.html">
+          WHY REUSE MATTERS →
+        </a>
       </div>
 
-      <a href="mailto:hello@a-second-life.com">
+      <a href="mailto:hello@a-second-life.com" class="mail">
         hello@a-second-life.com
       </a>
 
@@ -303,4 +366,5 @@
   </footer>
 
 </body>
+
 </html>
