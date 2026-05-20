@@ -1,69 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>A_SECOND_LIFE | Why reuse matters</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta name="description"
-        content="Millions of smartphones are forgotten, discarded or left in drawers every year. A_SECOND_LIFE gives them a new purpose.">
+  <title>Why reuse matters | A_SECOND_LIFE</title>
 
-  <link rel="stylesheet" href="style.css">
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #030507;
+      color: white;
+      font-family: "Courier New", monospace;
+      overflow-x: hidden;
+    }
+
+    .background {
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(0,100,255,.45), transparent 35%),
+        radial-gradient(circle at 80% 40%, rgba(0,255,150,.40), transparent 35%),
+        radial-gradient(circle at 50% 100%, rgba(140,0,255,.40), transparent 40%),
+        #030507;
+      animation: moveBackground 10s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+
+    .wave {
+      position: fixed;
+      width: 160%;
+      height: 160%;
+      left: -30%;
+      top: 25%;
+      background: linear-gradient(
+        120deg,
+        transparent 35%,
+        rgba(0,180,255,.18),
+        rgba(0,255,160,.28),
+        rgba(180,0,255,.18),
+        transparent 65%
+      );
+      filter: blur(35px);
+      animation: waveMove 8s linear infinite;
+      z-index: 1;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 50px 24px 90px;
+    }
+
+    .back {
+      color: #5dffdc;
+      text-decoration: none;
+      opacity: .75;
+      font-size: .9rem;
+      letter-spacing: .18em;
+    }
+
+    .hero {
+      min-height: 80vh;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: .95;
+      letter-spacing: .08em;
+      margin: 40px 0 30px;
+      font-weight: 400;
+      text-shadow: 0 0 30px rgba(255,255,255,.35);
+    }
+
+    .lead {
+      font-size: 1.25rem;
+      line-height: 1.9;
+      opacity: .85;
+      max-width: 650px;
+    }
+
+    .highlight {
+      color: #5dffb0;
+    }
+
+    .phone-art {
+      height: 520px;
+      border-radius: 42px;
+      border: 1px solid rgba(255,255,255,.14);
+      background:
+        linear-gradient(160deg, rgba(255,255,255,.08), rgba(255,255,255,.02)),
+        radial-gradient(circle at 50% 20%, rgba(93,255,176,.35), transparent 35%);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 70px rgba(0,255,180,.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .phone {
+      position: absolute;
+      width: 190px;
+      height: 360px;
+      border-radius: 34px;
+      border: 3px solid rgba(255,255,255,.65);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(-8deg);
+      background: rgba(0,0,0,.35);
+      box-shadow: 0 0 50px rgba(93,255,176,.25);
+    }
+
+    .phone::before {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 6px;
+      border-radius: 10px;
+      background: rgba(255,255,255,.45);
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .crack {
+      position: absolute;
+      width: 2px;
+      height: 150px;
+      background: #5dffdc;
+      left: 58%;
+      top: 28%;
+      transform: rotate(25deg);
+      box-shadow: 0 0 18px #5dffdc;
+      opacity: .8;
+    }
+
+    .orbit {
+      position: absolute;
+      border: 1px solid rgba(93,255,176,.35);
+      border-radius: 50%;
+      animation: spin 12s linear infinite;
+    }
+
+    .orbit.one {
+      width: 360px;
+      height: 360px;
+      left: 50%;
+      top: 50%;
+      margin-left: -180px;
+      margin-top: -180px;
+    }
+
+    .orbit.two {
+      width: 460px;
+      height: 460px;
+      left: 50%;
+      top: 50%;
+      margin-left: -230px;
+      margin-top: -230px;
+      animation-duration: 18s;
+    }
+
+    .section {
+      margin-top: 80px;
+    }
+
+    .section h2 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      letter-spacing: .08em;
+      font-weight: 400;
+      margin-bottom: 30px;
+    }
+
+    .section p {
+      font-size: 1.12rem;
+      line-height: 1.9;
+      opacity: .82;
+      max-width: 850px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 45px;
+    }
+
+    .card {
+      min-height: 250px;
+      border-radius: 28px;
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.045);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 35px rgba(0,255,180,.08);
+    }
+
+    .icon {
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+    }
+
+    .card h3 {
+      color: #5dffb0;
+      letter-spacing: .12em;
+      font-size: 1rem;
+      margin-bottom: 18px;
+    }
+
+    .card p {
+      font-size: .98rem;
+      line-height: 1.7;
+      opacity: .78;
+    }
+
+    .quote {
+      margin-top: 100px;
+      padding: 55px 35px;
+      text-align: center;
+      border-radius: 36px;
+      background:
+        linear-gradient(90deg, rgba(125,107,255,.18), rgba(70,230,255,.18), rgba(93,255,176,.18));
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 0 60px rgba(93,255,176,.12);
+    }
+
+    .quote h2 {
+      margin: 0;
+      font-size: clamp(2rem, 6vw, 5rem);
+      letter-spacing: .14em;
+      background: linear-gradient(90deg, #7d6bff, #46e6ff, #5dffb0);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    @media (max-width: 850px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .phone-art {
+        height: 420px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @keyframes moveBackground {
+      from { filter: hue-rotate(0deg); transform: scale(1); }
+      to { filter: hue-rotate(45deg); transform: scale(1.12); }
+    }
+
+    @keyframes waveMove {
+      from { transform: translateX(-10%) rotate(-12deg); }
+      to { transform: translateX(10%) rotate(-12deg); }
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
 </head>
 
 <body>
-  <main class="page">
 
-    <a href="index.html" class="back">← back to home</a>
+  <div class="background"></div>
+  <div class="wave"></div>
 
-    <h1>
-      It’s not old. <br>
-      It’s ready for a second life.
-    </h1>
+  <main class="container">
 
-    <p>
-      Every year, billions of smartphones are forgotten in drawers,
-      abandoned, or thrown away — even when they could still be useful.
-    </p>
+    <a href="index.html" class="back">← BACK TO HOME</a>
 
-    <p>
-      Some have a cracked screen.
-      Some have weak batteries.
-      Others are simply considered outdated.
-    </p>
+    <section class="hero">
 
-    <p>
-      But outdated does not mean useless.
-    </p>
+      <div>
+        <h1>
+          NOT OLD.<br>
+          JUST<br>
+          UNFINISHED.
+        </h1>
 
-    <p>
-      According to the WEEE Forum, around 5.3 billion mobile phones
-      became potential electronic waste in a single year.
-      Most of them still contained valuable and functional technology.
-    </p>
+        <p class="lead">
+          Every year, millions of smartphones are forgotten in drawers,
+          replaced, abandoned or thrown away.
+          But a device does not lose its value just because it is no longer new.
+        </p>
 
-    <p>
-      A_SECOND_LIFE starts from a simple idea:
-      before recycling, we can reuse.
-    </p>
+        <p class="lead">
+          <span class="highlight">A_SECOND_LIFE</span> gives old technology
+          a new purpose, transforming forgotten devices into useful,
+          beautiful and meaningful objects.
+        </p>
+      </div>
 
-    <p>
-      An old smartphone can become a music player,
-      a smart home device,
-      a security camera,
-      a digital object designed to live differently.
-    </p>
+      <div class="phone-art">
+        <div class="orbit one"></div>
+        <div class="orbit two"></div>
+        <div class="phone">
+          <div class="crack"></div>
+        </div>
+      </div>
 
-    <h2>
-      Reuse before recycle.
-    </h2>
+    </section>
 
-    <p>
-      Technology should not disappear just because it is no longer new.
-      We believe existing devices deserve another chance,
-      another function,
-      another story.
-    </p>
+    <section class="section">
+
+      <h2>WHY REUSE MATTERS</h2>
+
+      <p>
+        Many phones still work. Some only have a cracked screen, a weak battery,
+        limited memory, an old operating system or small defects that make them
+        less attractive as personal devices.
+      </p>
+
+      <p>
+        But inside each one there is still technology: a screen, speakers,
+        sensors, a camera, a processor, connectivity and energy already spent
+        to produce it. Throwing it away too early means wasting all of that.
+      </p>
+
+      <p>
+        Before recycling, we can imagine. Before replacing, we can transform.
+        Before forgetting, we can give technology another role in our lives.
+      </p>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="icon">♫</div>
+          <h3>MUSIC DOCK</h3>
+          <p>
+            An old phone can become a dedicated music player,
+            always ready at home, in the studio or in a child’s room.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">◉</div>
+          <h3>SMART OBJECT</h3>
+          <p>
+            With the right case, a forgotten device can become a useful
+            digital object instead of staying hidden in a drawer.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">▣</div>
+          <h3>SECURITY DEVICE</h3>
+          <p>
+            A working camera, screen and Wi-Fi connection can be reimagined
+            as a simple home monitoring device.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="quote">
+      <h2>REUSE BEFORE RECYCLE.</h2>
+    </section>
 
   </main>
+
 </body>
 </html>
