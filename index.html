@@ -235,23 +235,43 @@
     }
 
     footer {
-      position: fixed;
+  position: fixed;
+  bottom: 18px;
 
-      bottom: 24px;
+  width: 100%;
 
-      width: 100%;
+  text-align: center;
 
-      text-align: center;
+  z-index: 3;
+}
 
-      z-index: 3;
+.footer-mail {
+  margin-bottom: 10px;
+}
 
-      font-size: 0.8rem;
+.footer-mail a {
+  color: #5dffdc;
 
-      opacity: 0.5;
+  text-decoration: none;
 
-      letter-spacing: 0.25em;
-    }
+  font-size: 0.9rem;
 
+  letter-spacing: 0.08em;
+
+  opacity: 0.9;
+}
+
+.footer-mail a:hover {
+  opacity: 0.7;
+}
+
+.footer-copy {
+  font-size: 0.72rem;
+
+  opacity: 0.45;
+
+  letter-spacing: 0.22em;
+}
     @keyframes moveBackground {
 
       from {
@@ -361,9 +381,19 @@
 
   </main>
 
-  <footer>
+ <footer>
+
+  <div class="footer-mail">
+    <a href="mailto:hello@a-second-life.com">
+      hello@a-second-life.com
+    </a>
+  </div>
+
+  <div class="footer-copy">
     © 2026 A_SECOND_LIFE
-  </footer>
+  </div>
+
+</footer>
 
 </body>
 
