@@ -19,8 +19,9 @@
     body {
       margin: 0;
       min-height: 100vh;
-         overflow-x: hidden;
-        overflow-y: auto;
+
+      overflow-x: hidden;
+      overflow-y: auto;
 
       background: #030507;
 
@@ -80,7 +81,7 @@
       text-align: center;
 
       padding: 24px;
-      
+
       padding-bottom: 140px;
     }
 
@@ -237,45 +238,160 @@
       opacity: 0.7;
     }
 
+    .product-section {
+
+      position: relative;
+
+      z-index: 2;
+
+      width: 100%;
+
+      max-width: 1200px;
+
+      margin: 80px auto 120px;
+
+      padding: 0 24px;
+
+      display: grid;
+
+      grid-template-columns: 1.2fr 0.8fr;
+
+      gap: 50px;
+
+      align-items: center;
+    }
+
+    .product-image img {
+
+      width: 100%;
+
+      border-radius: 30px;
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      box-shadow: 0 0 60px rgba(0,255,180,0.12);
+
+      transition: 0.4s ease;
+    }
+
+    .product-image img:hover {
+
+      transform: scale(1.02);
+    }
+
+    .product-label {
+
+      color: #5dffb0;
+
+      letter-spacing: 0.2em;
+
+      margin-bottom: 20px;
+
+      font-size: 0.9rem;
+    }
+
+    .product-text h2 {
+
+      font-size: clamp(2rem, 5vw, 4rem);
+
+      line-height: 1.1;
+
+      margin-bottom: 25px;
+
+      font-weight: 400;
+
+      letter-spacing: 0.08em;
+    }
+
+    .title-link {
+
+      color: white;
+
+      text-decoration: none;
+
+      transition: 0.3s ease;
+    }
+
+    .title-link:hover {
+
+      color: #5dffb0;
+    }
+
+    .product-text p {
+
+      font-size: 1.1rem;
+
+      line-height: 1.9;
+
+      opacity: 0.8;
+
+      margin-bottom: 35px;
+    }
+
+    .product-link {
+
+      color: #5dffdc;
+
+      text-decoration: none;
+
+      letter-spacing: 0.12em;
+    }
+
+    .product-link:hover {
+
+      opacity: 0.7;
+    }
+
     footer {
-  position: relative;
+      position: relative;
 
-  width: 100%;
+      width: 100%;
 
-  text-align: center;
+      text-align: center;
 
-  z-index: 3;
+      z-index: 3;
 
-  padding-bottom: 35px;
-}
+      padding-bottom: 35px;
+    }
 
-.footer-mail {
-  margin-bottom: 10px;
-}
+    .footer-mail {
+      margin-bottom: 10px;
+    }
 
-.footer-mail a {
-  color: #5dffdc;
+    .footer-mail a {
+      color: #5dffdc;
 
-  text-decoration: none;
+      text-decoration: none;
 
-  font-size: 0.9rem;
+      font-size: 0.9rem;
 
-  letter-spacing: 0.08em;
+      letter-spacing: 0.08em;
 
-  opacity: 0.9;
-}
+      opacity: 0.9;
+    }
 
-.footer-mail a:hover {
-  opacity: 0.7;
-}
+    .footer-mail a:hover {
+      opacity: 0.7;
+    }
 
-.footer-copy {
-  font-size: 0.72rem;
+    .footer-copy {
+      font-size: 0.72rem;
 
-  opacity: 0.45;
+      opacity: 0.45;
 
-  letter-spacing: 0.22em;
-}
+      letter-spacing: 0.22em;
+    }
+
+    @media (max-width: 900px) {
+
+      .product-section {
+
+        grid-template-columns: 1fr;
+
+        margin-top: 60px;
+      }
+    }
+
     @keyframes moveBackground {
 
       from {
@@ -369,38 +485,81 @@
       </div>
 
       <div class="text">
+
         Millions of devices are forgotten every year.<br>
         We believe they still deserve a place in our lives.<br><br>
-        
-      <a href="mailto:hello@a-second-life.com" class="mail">
-            hello@a-second-life.com
-      </a>
-      <br><br>
-        
+
+        <a href="mailto:hello@a-second-life.com" class="mail">
+          hello@a-second-life.com
+        </a>
+
+        <br><br>
+
         <a href="reuse.html">
           WHY REUSE MATTERS →
         </a>
-      </div>
 
-      
+      </div>
 
     </div>
 
   </main>
 
- <footer>
+  <section class="product-section">
 
-  <div class="footer-mail">
-    <a href="mailto:hello@a-second-life.com">
-      hello@a-second-life.com
-    </a>
-  </div>
+    <div class="product-image">
 
-  <div class="footer-copy">
-    © 2026 A_SECOND_LIFE
-  </div>
+      <a href="music-dock.html">
 
-</footer>
+        <img src="slide1.jpg" alt="Music Dock">
+
+      </a>
+
+    </div>
+
+    <div class="product-text">
+
+      <div class="product-label">
+        FIRST CONCEPT
+      </div>
+
+      <h2>
+
+        <a href="music-dock.html" class="title-link">
+
+          YOUR MUSIC.<br>
+          YOUR WAY.
+
+        </a>
+
+      </h2>
+
+      <p>
+        Transform your old smartphone into a dedicated music experience.
+        One system. Infinite places.
+      </p>
+
+      <a href="music-dock.html" class="product-link">
+        OPEN PROJECT →
+      </a>
+
+    </div>
+
+  </section>
+
+  <footer>
+
+    <div class="footer-mail">
+      <a href="mailto:hello@a-second-life.com">
+        hello@a-second-life.com
+      </a>
+    </div>
+
+    <div class="footer-copy">
+      © 2026 A_SECOND_LIFE
+    </div>
+
+  </footer>
 
 </body>
 
