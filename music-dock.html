@@ -1,1 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Music Dock | A_SECOND_LIFE</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+
+      margin: 0;
+
+      background: #030507;
+
+      color: white;
+
+      font-family: "Courier New", monospace;
+
+      overflow-x: hidden;
+    }
+
+    .background {
+
+      position: fixed;
+
+      inset: 0;
+
+      background:
+        radial-gradient(circle at 20% 80%, rgba(0,100,255,.35), transparent 35%),
+        radial-gradient(circle at 80% 40%, rgba(0,255,150,.25), transparent 35%),
+        radial-gradient(circle at 50% 100%, rgba(140,0,255,.30), transparent 40%),
+        #030507;
+
+      z-index: 0;
+    }
+
+    .container {
+
+      position: relative;
+
+      z-index: 2;
+
+      max-width: 1400px;
+
+      margin: auto;
+
+      padding: 60px 24px 120px;
+    }
+
+    .back {
+
+      color: #5dffdc;
+
+      text-decoration: none;
+
+      letter-spacing: 0.12em;
+    }
+
+    h1 {
+
+      font-size: clamp(2.8rem, 6vw, 5rem);
+
+      font-weight: 400;
+
+      margin: 50px 0 20px;
+
+      line-height: 1.05;
+
+      letter-spacing: 0.08em;
+    }
+
+    .subtitle {
+
+      opacity: 0.7;
+
+      margin-bottom: 60px;
+
+      font-size: 1.1rem;
+
+      line-height: 1.8;
+
+      max-width: 700px;
+    }
+
+    .gallery {
+
+      display: grid;
+
+      gap: 40px;
+    }
+
+    .gallery img {
+
+      width: 100%;
+
+      border-radius: 28px;
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      box-shadow: 0 0 50px rgba(0,255,180,0.08);
+    }
+
+    footer {
+
+      margin-top: 80px;
+
+      text-align: center;
+
+      opacity: 0.4;
+
+      letter-spacing: 0.2em;
+
+      font-size: 0.8rem;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="background"></div>
+
+  <main class="container">
+
+    <a href="index.html" class="back">
+      ← BACK TO HOME
+    </a>
+
+    <h1>
+      MUSIC DOCK
+    </h1>
+
+    <div class="subtitle">
+
+      A_SECOND_LIFE transforms old smartphones into dedicated
+      music experiences designed for everyday life.
+
+      Minimal. Adaptable. Reusable.
+
+    </div>
+
+    <div class="gallery">
+
+      <img src="slide1.jpg" alt="Music Dock Concept">
+      <img src="slide2.jpg" alt="Detachable Speaker">
+      <img src="slide3.jpg" alt="Self Centering System">
+
+    </div>
+
+    <footer>
+      © 2026 A_SECOND_LIFE
+    </footer>
+
+  </main>
+
+</body>
+
+</html>
