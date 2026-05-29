@@ -1,0 +1,4 @@
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^a-second-life\.com [NC]
+RewriteRule ^(.*)$ https://www.a-second-life.com/$1 [L,R=301]
